@@ -13,7 +13,10 @@ return {
   "nvim-tree/nvim-web-devicons",
   "wakatime/vim-wakatime",
 
-  { dir = local_plugins,                   name = "mentat" },
+  {
+    dir = local_plugins,
+    name = "mentat",
+  },
 
   { "folke/which-key.nvim",                event = "VimEnter" },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl",                          opts = {} },
@@ -85,7 +88,6 @@ return {
             require("telescope.themes").get_dropdown {
               -- even more opts
             }
-
             -- pseudo code / specification for writing custom displays, like the one
             -- for "codeactions"
             -- specific_opts = {
@@ -99,12 +101,14 @@ return {
             --      do the following
             --   codeactions = false,
             -- }
-          }
+          },
+          mentat = {}
         }
       }
       -- To get ui-select loaded and working with telescope, you need to call
       -- load_extension, somewhere after setup function:
       require("telescope").load_extension("ui-select")
+      require("telescope").load_extension("mentat")
     end
   },
 
